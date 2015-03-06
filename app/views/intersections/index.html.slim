@@ -1,0 +1,21 @@
+h1 Listing intersections
+
+table
+  thead
+    tr
+      th Name
+      th
+      th
+      th
+
+  tbody
+    - @intersections.each do |intersection|
+      tr
+        td = intersection.name
+        td = link_to 'Show', intersection
+        td = link_to 'Edit', edit_intersection_path(intersection)
+        td = link_to 'Destroy', intersection, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Intersection', new_intersection_path

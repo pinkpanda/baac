@@ -1,0 +1,21 @@
+h1 Listing car_categories
+
+table
+  thead
+    tr
+      th Name
+      th
+      th
+      th
+
+  tbody
+    - @car_categories.each do |car_category|
+      tr
+        td = car_category.name
+        td = link_to 'Show', car_category
+        td = link_to 'Edit', edit_car_category_path(car_category)
+        td = link_to 'Destroy', car_category, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Car category', new_car_category_path

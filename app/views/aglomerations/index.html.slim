@@ -1,0 +1,21 @@
+h1 Listing aglomerations
+
+table
+  thead
+    tr
+      th Name
+      th
+      th
+      th
+
+  tbody
+    - @aglomerations.each do |aglomeration|
+      tr
+        td = aglomeration.name
+        td = link_to 'Show', aglomeration
+        td = link_to 'Edit', edit_aglomeration_path(aglomeration)
+        td = link_to 'Destroy', aglomeration, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Aglomeration', new_aglomeration_path

@@ -1,0 +1,9 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @light.name
+
+= link_to 'Edit', edit_light_path(@light)
+'|
+= link_to 'Back', lights_path

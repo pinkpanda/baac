@@ -1,0 +1,9 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @traffic.name
+
+= link_to 'Edit', edit_traffic_path(@traffic)
+'|
+= link_to 'Back', traffics_path

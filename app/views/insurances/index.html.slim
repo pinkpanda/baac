@@ -1,0 +1,21 @@
+h1 Listing insurances
+
+table
+  thead
+    tr
+      th Name
+      th
+      th
+      th
+
+  tbody
+    - @insurances.each do |insurance|
+      tr
+        td = insurance.name
+        td = link_to 'Show', insurance
+        td = link_to 'Edit', edit_insurance_path(insurance)
+        td = link_to 'Destroy', insurance, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Insurance', new_insurance_path

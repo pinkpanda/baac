@@ -1,0 +1,21 @@
+h1 Listing atmoshperes
+
+table
+  thead
+    tr
+      th Name
+      th
+      th
+      th
+
+  tbody
+    - @atmoshperes.each do |atmoshpere|
+      tr
+        td = atmoshpere.name
+        td = link_to 'Show', atmoshpere
+        td = link_to 'Edit', edit_atmoshpere_path(atmoshpere)
+        td = link_to 'Destroy', atmoshpere, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Atmoshpere', new_atmoshpere_path

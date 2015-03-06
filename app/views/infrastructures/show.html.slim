@@ -1,0 +1,9 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @infrastructure.name
+
+= link_to 'Edit', edit_infrastructure_path(@infrastructure)
+'|
+= link_to 'Back', infrastructures_path

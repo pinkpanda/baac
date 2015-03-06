@@ -1,0 +1,9 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @intersection.name
+
+= link_to 'Edit', edit_intersection_path(@intersection)
+'|
+= link_to 'Back', intersections_path

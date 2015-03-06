@@ -1,0 +1,9 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @lane.name
+
+= link_to 'Edit', edit_lane_path(@lane)
+'|
+= link_to 'Back', lanes_path

@@ -1,0 +1,21 @@
+h1 Listing infrastructures
+
+table
+  thead
+    tr
+      th Name
+      th
+      th
+      th
+
+  tbody
+    - @infrastructures.each do |infrastructure|
+      tr
+        td = infrastructure.name
+        td = link_to 'Show', infrastructure
+        td = link_to 'Edit', edit_infrastructure_path(infrastructure)
+        td = link_to 'Destroy', infrastructure, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Infrastructure', new_infrastructure_path

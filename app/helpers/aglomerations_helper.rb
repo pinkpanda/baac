@@ -1,0 +1,2 @@
+module AglomerationsHelper
+end

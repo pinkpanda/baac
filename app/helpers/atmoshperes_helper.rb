@@ -1,0 +1,2 @@
+module AtmoshperesHelper
+end

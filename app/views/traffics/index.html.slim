@@ -1,0 +1,21 @@
+h1 Listing traffics
+
+table
+  thead
+    tr
+      th Name
+      th
+      th
+      th
+
+  tbody
+    - @traffics.each do |traffic|
+      tr
+        td = traffic.name
+        td = link_to 'Show', traffic
+        td = link_to 'Edit', edit_traffic_path(traffic)
+        td = link_to 'Destroy', traffic, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Traffic', new_traffic_path

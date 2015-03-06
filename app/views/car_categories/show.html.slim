@@ -1,0 +1,9 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @car_category.name
+
+= link_to 'Edit', edit_car_category_path(@car_category)
+'|
+= link_to 'Back', car_categories_path

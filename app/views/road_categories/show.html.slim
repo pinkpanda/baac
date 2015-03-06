@@ -1,0 +1,9 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @road_category.name
+
+= link_to 'Edit', edit_road_category_path(@road_category)
+'|
+= link_to 'Back', road_categories_path

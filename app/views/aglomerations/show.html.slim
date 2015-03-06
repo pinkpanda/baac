@@ -1,0 +1,9 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @aglomeration.name
+
+= link_to 'Edit', edit_aglomeration_path(@aglomeration)
+'|
+= link_to 'Back', aglomerations_path

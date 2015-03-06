@@ -1,0 +1,21 @@
+h1 Listing lanes
+
+table
+  thead
+    tr
+      th Name
+      th
+      th
+      th
+
+  tbody
+    - @lanes.each do |lane|
+      tr
+        td = lane.name
+        td = link_to 'Show', lane
+        td = link_to 'Edit', edit_lane_path(lane)
+        td = link_to 'Destroy', lane, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Lane', new_lane_path

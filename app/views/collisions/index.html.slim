@@ -1,0 +1,21 @@
+h1 Listing collisions
+
+table
+  thead
+    tr
+      th Name
+      th
+      th
+      th
+
+  tbody
+    - @collisions.each do |collision|
+      tr
+        td = collision.name
+        td = link_to 'Show', collision
+        td = link_to 'Edit', edit_collision_path(collision)
+        td = link_to 'Destroy', collision, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Collision', new_collision_path
