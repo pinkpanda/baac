@@ -1,12 +1,10 @@
 Rails.application.routes.draw do
+  root to: 'accidents#index'
+
   resources :addresses
-
   resources :cities
-
   resources :departments
-
   resources :vehicules
-
   resources :accidents
   resources :agglomerations
   resources :assignments

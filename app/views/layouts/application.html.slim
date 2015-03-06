@@ -7,6 +7,32 @@ head
   = csrf_meta_tags
 
 body
+  = nav_bar
+    = menu_group do
+      = menu_item 'Adresses', addresses_path
+      = menu_item 'Communes', cities_path
+      = menu_item 'Départements', departments_path
+      = menu_item 'Véhicules', vehicules_path
+      = menu_item 'Accidents', accidents_path
+      = menu_item 'Agglomerations', agglomerations_path
+      = menu_item 'Affectation véhicule', assignments_path
+      = menu_item 'Atmosphérique', atmoshperes_path
+      = menu_item 'Catégorie de véhicule', car_categories_path
+      = menu_item 'Collisions', collisions_path
+      = menu_item 'Infrastructures', infrastructures_path
+      = menu_item 'Assurances', insurances_path
+      = menu_item 'Intersections', intersections_path
+      = menu_item 'Voie spécial', lanes_path
+      = menu_item 'Lumières', lights_path
+      = menu_item 'Situations', locations_path
+      = menu_item 'Appartenances véhicule', memberships_path
+      = menu_item 'Organismes', organisms_path
+      = menu_item 'Tracé en plan', plans_path
+      = menu_item 'Profile en long', profiles_path
+      = menu_item 'Catégories de routes', road_categories_path
+      = menu_item 'Régime circulation', traffics_path
+      = menu_item 'Zone GPS', zones_path
+
   .container
     .row
       .col-xs-12
