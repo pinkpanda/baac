@@ -1,8 +1,4 @@
-h1 Editing traffic
-
-== render 'form'
-
-= link_to 'Show', @traffic
-'|
-= link_to 'Back', traffics_path
-
+- model_class = Traffic
+div class="page-header"
+  h1=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => model_class.model_name.human.titleize
+= render :partial => "form"

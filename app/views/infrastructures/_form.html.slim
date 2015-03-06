@@ -1,8 +1,6 @@
-= simple_form_for(@infrastructure) do |f|
-  = f.error_notification
-
-  .form-inputs
-    = f.input :name
-
-  .form-actions
-    = f.button :submit
+= simple_form_for @infrastructure, :html => { :class => "form-horizontal" } do |f|
+  = f.input :name
+  = error_span(@infrastructure[:name])
+  = f.button :submit, :class => 'btn-primary'
+  '
+  = link_to t('.cancel', :default => t("helpers.links.cancel")), infrastructures_path, :class => 'btn btn-default'

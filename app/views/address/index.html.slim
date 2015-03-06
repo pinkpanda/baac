@@ -1,0 +1,55 @@
+- model_class = Address
+div class="page-header"
+  h1=t '.title', :default => model_class.model_name.human.pluralize.titleize
+table class="table table-striped"
+  thead
+    tr
+      th= model_class.human_attribute_name(:id)
+      th= model_class.human_attribute_name(:lane_name)
+      th= model_class.human_attribute_name(:number_of_lanes)
+      th= model_class.human_attribute_name(:pr_number)
+      th= model_class.human_attribute_name(:pr_distance)
+      th= model_class.human_attribute_name(:lane_number)
+      th= model_class.human_attribute_name(:lane_num_indice)
+      th= model_class.human_attribute_name(:lane_alphanum_indice)
+      th= model_class.human_attribute_name(:latitude)
+      th= model_class.human_attribute_name(:longitude)
+      th= model_class.human_attribute_name(:profile_id)
+      th= model_class.human_attribute_name(:zone_id)
+      th= model_class.human_attribute_name(:road_category_id)
+      th= model_class.human_attribute_name(:plan_id)
+      th= model_class.human_attribute_name(:infrastructure_id)
+      th= model_class.human_attribute_name(:location_id)
+      th= model_class.human_attribute_name(:traffic_id)
+      th= model_class.human_attribute_name(:lane_id)
+      th= model_class.human_attribute_name(:created_at)
+      th=t '.actions', :default => t("helpers.actions")
+  tbody
+    - @addresses.each do |address|
+      tr
+        td= link_to address.id, address_path(address)
+        td= address.lane_name
+        td= address.number_of_lanes
+        td= address.pr_number
+        td= address.pr_distance
+        td= address.lane_number
+        td= address.lane_num_indice
+        td= address.lane_alphanum_indice
+        td= address.latitude
+        td= address.longitude
+        td= address.profile_id
+        td= address.zone_id
+        td= address.road_category_id
+        td= address.plan_id
+        td= address.infrastructure_id
+        td= address.location_id
+        td= address.traffic_id
+        td= address.lane_id
+        td=l address.created_at
+        td
+          = link_to t('.edit', :default => t("helpers.links.edit")), edit_address_path(address), :class => 'btn btn-default btn-xs'
+          '
+          = link_to t('.destroy', :default => t("helpers.links.destroy")), address_path(address), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs btn-danger'
+
+= link_to t('.new', :default => t("helpers.links.new")), new_address_path, :class => 'btn btn-primary'
+

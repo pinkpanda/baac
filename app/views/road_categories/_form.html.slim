@@ -1,8 +1,6 @@
-= simple_form_for(@road_category) do |f|
-  = f.error_notification
-
-  .form-inputs
-    = f.input :name
-
-  .form-actions
-    = f.button :submit
+= simple_form_for @road_category, :html => { :class => "form-horizontal" } do |f|
+  = f.input :name
+  = error_span(@road_category[:name])
+  = f.button :submit, :class => 'btn-primary'
+  '
+  = link_to t('.cancel', :default => t("helpers.links.cancel")), road_categories_path, :class => 'btn btn-default'

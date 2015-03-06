@@ -1,8 +1,4 @@
-h1 Editing light
-
-== render 'form'
-
-= link_to 'Show', @light
-'|
-= link_to 'Back', lights_path
-
+- model_class = Light
+div class="page-header"
+  h1=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => model_class.model_name.human.titleize
+= render :partial => "form"

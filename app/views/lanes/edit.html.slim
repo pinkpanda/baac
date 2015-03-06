@@ -1,8 +1,4 @@
-h1 Editing lane
-
-== render 'form'
-
-= link_to 'Show', @lane
-'|
-= link_to 'Back', lanes_path
-
+- model_class = Lane
+div class="page-header"
+  h1=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => model_class.model_name.human.titleize
+= render :partial => "form"

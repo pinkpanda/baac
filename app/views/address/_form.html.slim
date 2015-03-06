@@ -1,0 +1,38 @@
+= simple_form_for @address, :html => { :class => "form-horizontal" } do |f|
+  = f.input :lane_name
+  = error_span(@address[:lane_name])
+  = f.input :number_of_lanes
+  = error_span(@address[:number_of_lanes])
+  = f.input :pr_number
+  = error_span(@address[:pr_number])
+  = f.input :pr_distance
+  = error_span(@address[:pr_distance])
+  = f.input :lane_number
+  = error_span(@address[:lane_number])
+  = f.input :lane_num_indice
+  = error_span(@address[:lane_num_indice])
+  = f.input :lane_alphanum_indice
+  = error_span(@address[:lane_alphanum_indice])
+  = f.input :latitude
+  = error_span(@address[:latitude])
+  = f.input :longitude
+  = error_span(@address[:longitude])
+  = f.association :profile
+  = error_span(@address[:profile])
+  = f.association :zone
+  = error_span(@address[:zone])
+  = f.association :road_category
+  = error_span(@address[:road_category])
+  = f.association :plan
+  = error_span(@address[:plan])
+  = f.association :infrastructure
+  = error_span(@address[:infrastructure])
+  = f.association :location
+  = error_span(@address[:location])
+  = f.association :traffic
+  = error_span(@address[:traffic])
+  = f.association :lane
+  = error_span(@address[:lane])
+  = f.button :submit, :class => 'btn-primary'
+  '
+  = link_to t('.cancel', :default => t("helpers.links.cancel")), addresses_path, :class => 'btn btn-default'

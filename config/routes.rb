@@ -1,20 +1,29 @@
 Rails.application.routes.draw do
-  resources :lanes
-  resources :traffics
-  resources :locations
-  resources :infrastructures
-  resources :plans
-  resources :road_categories
-  resources :zones
-  resources :profiles
-  resources :memberships
+  resources :addresses
+
+  resources :cities
+
+  resources :departments
+
+  resources :vehicules
+
+  resources :accidents
+  resources :agglomerations
   resources :assignments
-  resources :insurances
-  resources :car_categories
-  resources :lights
-  resources :aglomerations
-  resources :collisions
   resources :atmoshperes
+  resources :car_categories
+  resources :collisions
+  resources :infrastructures
+  resources :insurances
   resources :intersections
+  resources :lanes
+  resources :lights
+  resources :locations
+  resources :memberships
   resources :organisms
+  resources :plans
+  resources :profiles
+  resources :road_categories
+  resources :traffics
+  resources :zones
 end

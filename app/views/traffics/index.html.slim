@@ -1,21 +1,23 @@
-h1 Listing traffics
-
-table
+- model_class = Traffic
+div class="page-header"
+  h1=t '.title', :default => model_class.model_name.human.pluralize.titleize
+table class="table table-striped"
   thead
     tr
-      th Name
-      th
-      th
-      th
-
+      th= model_class.human_attribute_name(:id)
+      th= model_class.human_attribute_name(:name)
+      th= model_class.human_attribute_name(:created_at)
+      th=t '.actions', :default => t("helpers.actions")
   tbody
     - @traffics.each do |traffic|
       tr
-        td = traffic.name
-        td = link_to 'Show', traffic
-        td = link_to 'Edit', edit_traffic_path(traffic)
-        td = link_to 'Destroy', traffic, data: {:confirm => 'Are you sure?'}, :method => :delete
+        td= link_to traffic.id, traffic_path(traffic)
+        td= traffic.name
+        td=l traffic.created_at
+        td
+          = link_to t('.edit', :default => t("helpers.links.edit")), edit_traffic_path(traffic), :class => 'btn btn-default btn-xs'
+          '
+          = link_to t('.destroy', :default => t("helpers.links.destroy")), traffic_path(traffic), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs btn-danger'
 
-br
+= link_to t('.new', :default => t("helpers.links.new")), new_traffic_path, :class => 'btn btn-primary'
 
-= link_to 'New Traffic', new_traffic_path

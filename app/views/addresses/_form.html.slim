@@ -1,0 +1,24 @@
+= simple_form_for(@address) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :lane_name
+    = f.input :number_of_lanes
+    = f.input :pr_number
+    = f.input :pr_distance
+    = f.input :lane_number
+    = f.input :lane_num_indice
+    = f.input :lane_alphanum_indice
+    = f.input :latitude
+    = f.input :longitude
+    = f.association :profile
+    = f.association :zone
+    = f.association :road_category
+    = f.association :plan
+    = f.association :infrastructure
+    = f.association :location
+    = f.association :traffic
+    = f.association :lane
+
+  .form-actions
+    = f.button :submit

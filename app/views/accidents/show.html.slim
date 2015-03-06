@@ -1,0 +1,74 @@
+- model_class = Accident
+div class="page-header"
+  h1=t '.title', :default => model_class.model_name.human.titleize
+
+p
+  strong= model_class.human_attribute_name(:severity) + ':'
+  br
+  = @accident.severity
+p
+  strong= model_class.human_attribute_name(:injured) + ':'
+  br
+  = @accident.injured
+p
+  strong= model_class.human_attribute_name(:killed) + ':'
+  br
+  = @accident.killed
+p
+  strong= model_class.human_attribute_name(:minor_injured) + ':'
+  br
+  = @accident.minor_injured
+p
+  strong= model_class.human_attribute_name(:serious_injured) + ':'
+  br
+  = @accident.serious_injured
+p
+  strong= model_class.human_attribute_name(:uninjured) + ':'
+  br
+  = @accident.uninjured
+p
+  strong= model_class.human_attribute_name(:agglomeration_id) + ':'
+  br
+  = @accident.agglomeration_id
+p
+  strong= model_class.human_attribute_name(:assignment_id) + ':'
+  br
+  = @accident.assignment_id
+p
+  strong= model_class.human_attribute_name(:atmoshpere_id) + ':'
+  br
+  = @accident.atmoshpere_id
+p
+  strong= model_class.human_attribute_name(:car_category_id) + ':'
+  br
+  = @accident.car_category_id
+p
+  strong= model_class.human_attribute_name(:collision_id) + ':'
+  br
+  = @accident.collision_id
+p
+  strong= model_class.human_attribute_name(:insurance_id) + ':'
+  br
+  = @accident.insurance_id
+p
+  strong= model_class.human_attribute_name(:intersection_id) + ':'
+  br
+  = @accident.intersection_id
+p
+  strong= model_class.human_attribute_name(:light_id) + ':'
+  br
+  = @accident.light_id
+p
+  strong= model_class.human_attribute_name(:membership_id) + ':'
+  br
+  = @accident.membership_id
+p
+  strong= model_class.human_attribute_name(:address) + ':'
+  br
+  = @accident.address
+
+= link_to t('.back', :default => t("helpers.links.back")), accidents_path, :class => 'btn btn-default'
+'
+= link_to t('.edit', :default => t("helpers.links.edit")), edit_accident_path(@accident), :class => 'btn btn-default'
+'
+= link_to t('.destroy', :default => t("helpers.links.destroy")), accident_path(@accident), :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-danger'

@@ -1,8 +1,6 @@
-= simple_form_for(@atmoshpere) do |f|
-  = f.error_notification
-
-  .form-inputs
-    = f.input :name
-
-  .form-actions
-    = f.button :submit
+= simple_form_for @atmoshpere, :html => { :class => "form-horizontal" } do |f|
+  = f.input :name
+  = error_span(@atmoshpere[:name])
+  = f.button :submit, :class => 'btn-primary'
+  '
+  = link_to t('.cancel', :default => t("helpers.links.cancel")), atmoshperes_path, :class => 'btn btn-default'

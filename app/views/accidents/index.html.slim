@@ -1,0 +1,53 @@
+- model_class = Accident
+div class="page-header"
+  h1=t '.title', :default => model_class.model_name.human.pluralize.titleize
+table class="table table-striped"
+  thead
+    tr
+      th= model_class.human_attribute_name(:id)
+      th= model_class.human_attribute_name(:severity)
+      th= model_class.human_attribute_name(:injured)
+      th= model_class.human_attribute_name(:killed)
+      th= model_class.human_attribute_name(:minor_injured)
+      th= model_class.human_attribute_name(:serious_injured)
+      th= model_class.human_attribute_name(:uninjured)
+      th= model_class.human_attribute_name(:agglomeration_id)
+      th= model_class.human_attribute_name(:assignment_id)
+      th= model_class.human_attribute_name(:atmoshpere_id)
+      th= model_class.human_attribute_name(:car_category_id)
+      th= model_class.human_attribute_name(:collision_id)
+      th= model_class.human_attribute_name(:insurance_id)
+      th= model_class.human_attribute_name(:intersection_id)
+      th= model_class.human_attribute_name(:light_id)
+      th= model_class.human_attribute_name(:membership_id)
+      th= model_class.human_attribute_name(:address)
+      th= model_class.human_attribute_name(:created_at)
+      th=t '.actions', :default => t("helpers.actions")
+  tbody
+    - @accidents.each do |accident|
+      tr
+        td= link_to accident.id, accident_path(accident)
+        td= accident.severity
+        td= accident.injured
+        td= accident.killed
+        td= accident.minor_injured
+        td= accident.serious_injured
+        td= accident.uninjured
+        td= accident.agglomeration_id
+        td= accident.assignment_id
+        td= accident.atmoshpere_id
+        td= accident.car_category_id
+        td= accident.collision_id
+        td= accident.insurance_id
+        td= accident.intersection_id
+        td= accident.light_id
+        td= accident.membership_id
+        td= accident.address
+        td=l accident.created_at
+        td
+          = link_to t('.edit', :default => t("helpers.links.edit")), edit_accident_path(accident), :class => 'btn btn-default btn-xs'
+          '
+          = link_to t('.destroy', :default => t("helpers.links.destroy")), accident_path(accident), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs btn-danger'
+
+= link_to t('.new', :default => t("helpers.links.new")), new_accident_path, :class => 'btn btn-primary'
+

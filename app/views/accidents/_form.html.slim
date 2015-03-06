@@ -1,0 +1,38 @@
+= simple_form_for @accident, :html => { :class => "form-horizontal" } do |f|
+  = f.input :severity
+  = error_span(@accident[:severity])
+  = f.input :injured
+  = error_span(@accident[:injured])
+  = f.input :killed
+  = error_span(@accident[:killed])
+  = f.input :minor_injured
+  = error_span(@accident[:minor_injured])
+  = f.input :serious_injured
+  = error_span(@accident[:serious_injured])
+  = f.input :uninjured
+  = error_span(@accident[:uninjured])
+  = f.association :agglomeration
+  = error_span(@accident[:agglomeration])
+  = f.association :assignment
+  = error_span(@accident[:assignment])
+  = f.association :atmoshpere
+  = error_span(@accident[:atmoshpere])
+  = f.association :car_category
+  = error_span(@accident[:car_category])
+  = f.association :collision
+  = error_span(@accident[:collision])
+  = f.association :insurance
+  = error_span(@accident[:insurance])
+  = f.association :intersection
+  = error_span(@accident[:intersection])
+  = f.association :light
+  = error_span(@accident[:light])
+  = f.association :membership
+  = error_span(@accident[:membership])
+  = f.association :city
+  = error_span(@accident[:city])
+  = f.input :address
+  = error_span(@accident[:address])
+  = f.button :submit, :class => 'btn-primary'
+  '
+  = link_to t('.cancel', :default => t("helpers.links.cancel")), accidents_path, :class => 'btn btn-default'

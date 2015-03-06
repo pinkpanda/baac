@@ -1,0 +1,41 @@
+- model_class = Vehicule
+div class="page-header"
+  h1=t '.title', :default => model_class.model_name.human.pluralize.titleize
+table class="table table-striped"
+  thead
+    tr
+      th= model_class.human_attribute_name(:id)
+      th= model_class.human_attribute_name(:killed)
+      th= model_class.human_attribute_name(:serious_injured)
+      th= model_class.human_attribute_name(:minor_injured)
+      th= model_class.human_attribute_name(:uninjured)
+      th= model_class.human_attribute_name(:released)
+      th= model_class.human_attribute_name(:accident_id)
+      th= model_class.human_attribute_name(:car_category_id)
+      th= model_class.human_attribute_name(:insurance_id)
+      th= model_class.human_attribute_name(:membership_id)
+      th= model_class.human_attribute_name(:assignment_id)
+      th= model_class.human_attribute_name(:created_at)
+      th=t '.actions', :default => t("helpers.actions")
+  tbody
+    - @vehicules.each do |vehicule|
+      tr
+        td= link_to vehicule.id, vehicule_path(vehicule)
+        td= vehicule.killed
+        td= vehicule.serious_injured
+        td= vehicule.minor_injured
+        td= vehicule.uninjured
+        td= vehicule.released
+        td= vehicule.accident_id
+        td= vehicule.car_category_id
+        td= vehicule.insurance_id
+        td= vehicule.membership_id
+        td= vehicule.assignment_id
+        td=l vehicule.created_at
+        td
+          = link_to t('.edit', :default => t("helpers.links.edit")), edit_vehicule_path(vehicule), :class => 'btn btn-default btn-xs'
+          '
+          = link_to t('.destroy', :default => t("helpers.links.destroy")), vehicule_path(vehicule), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs btn-danger'
+
+= link_to t('.new', :default => t("helpers.links.new")), new_vehicule_path, :class => 'btn btn-primary'
+

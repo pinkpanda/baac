@@ -1,0 +1,57 @@
+p#notice = notice
+
+p
+  strong Lane name:
+  = @address.lane_name
+p
+  strong Number of lanes:
+  = @address.number_of_lanes
+p
+  strong Pr number:
+  = @address.pr_number
+p
+  strong Pr distance:
+  = @address.pr_distance
+p
+  strong Lane number:
+  = @address.lane_number
+p
+  strong Lane num indice:
+  = @address.lane_num_indice
+p
+  strong Lane alphanum indice:
+  = @address.lane_alphanum_indice
+p
+  strong Latitude:
+  = @address.latitude
+p
+  strong Longitude:
+  = @address.longitude
+p
+  strong Profile:
+  = @address.profile
+p
+  strong Zone:
+  = @address.zone
+p
+  strong Road category:
+  = @address.road_category
+p
+  strong Plan:
+  = @address.plan
+p
+  strong Infrastructure:
+  = @address.infrastructure
+p
+  strong Location:
+  = @address.location
+p
+  strong Traffic:
+  = @address.traffic
+p
+  strong Lane:
+  = @address.lane
+
+= link_to 'Edit', edit_address_path(@address)
+'|
+= link_to 'Back', addresses_path

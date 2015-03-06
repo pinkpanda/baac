@@ -1,8 +1,4 @@
-h1 Editing road_category
-
-== render 'form'
-
-= link_to 'Show', @road_category
-'|
-= link_to 'Back', road_categories_path
-
+- model_class = RoadCategory
+div class="page-header"
+  h1=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => model_class.model_name.human.titleize
+= render :partial => "form"

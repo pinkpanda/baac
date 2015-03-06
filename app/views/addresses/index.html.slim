@@ -1,0 +1,53 @@
+h1 Listing addresses
+
+table
+  thead
+    tr
+      th Lane name
+      th Number of lanes
+      th Pr number
+      th Pr distance
+      th Lane number
+      th Lane num indice
+      th Lane alphanum indice
+      th Latitude
+      th Longitude
+      th Profile
+      th Zone
+      th Road category
+      th Plan
+      th Infrastructure
+      th Location
+      th Traffic
+      th Lane
+      th
+      th
+      th
+
+  tbody
+    - @addresses.each do |address|
+      tr
+        td = address.lane_name
+        td = address.number_of_lanes
+        td = address.pr_number
+        td = address.pr_distance
+        td = address.lane_number
+        td = address.lane_num_indice
+        td = address.lane_alphanum_indice
+        td = address.latitude
+        td = address.longitude
+        td = address.profile
+        td = address.zone
+        td = address.road_category
+        td = address.plan
+        td = address.infrastructure
+        td = address.location
+        td = address.traffic
+        td = address.lane
+        td = link_to 'Show', address
+        td = link_to 'Edit', edit_address_path(address)
+        td = link_to 'Destroy', address, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Address', new_address_path

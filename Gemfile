@@ -4,8 +4,10 @@ gem 'rails',            '4.2.0'
 
 gem 'capistrano-rails', group: :development
 gem 'coffee-rails',     '~> 4.1.0'
+gem 'heroku_secrets',   github: 'alexpeattie/heroku_secrets'
 gem 'jquery-rails'
 gem 'mysql2'
+gem 'pg'
 gem 'sass-rails',       '~> 5.0'
 gem 'simple_form'
 gem 'slim-rails'

@@ -1,8 +1,4 @@
-h1 Editing collision
-
-== render 'form'
-
-= link_to 'Show', @collision
-'|
-= link_to 'Back', collisions_path
-
+- model_class = Collision
+div class="page-header"
+  h1=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => model_class.model_name.human.titleize
+= render :partial => "form"

@@ -1,0 +1,50 @@
+- model_class = Vehicule
+div class="page-header"
+  h1=t '.title', :default => model_class.model_name.human.titleize
+
+p
+  strong= model_class.human_attribute_name(:killed) + ':'
+  br
+  = @vehicule.killed
+p
+  strong= model_class.human_attribute_name(:serious_injured) + ':'
+  br
+  = @vehicule.serious_injured
+p
+  strong= model_class.human_attribute_name(:minor_injured) + ':'
+  br
+  = @vehicule.minor_injured
+p
+  strong= model_class.human_attribute_name(:uninjured) + ':'
+  br
+  = @vehicule.uninjured
+p
+  strong= model_class.human_attribute_name(:released) + ':'
+  br
+  = @vehicule.released
+p
+  strong= model_class.human_attribute_name(:accident_id) + ':'
+  br
+  = @vehicule.accident_id
+p
+  strong= model_class.human_attribute_name(:car_category_id) + ':'
+  br
+  = @vehicule.car_category_id
+p
+  strong= model_class.human_attribute_name(:insurance_id) + ':'
+  br
+  = @vehicule.insurance_id
+p
+  strong= model_class.human_attribute_name(:membership_id) + ':'
+  br
+  = @vehicule.membership_id
+p
+  strong= model_class.human_attribute_name(:assignment_id) + ':'
+  br
+  = @vehicule.assignment_id
+
+= link_to t('.back', :default => t("helpers.links.back")), vehicules_path, :class => 'btn btn-default'
+'
+= link_to t('.edit', :default => t("helpers.links.edit")), edit_vehicule_path(@vehicule), :class => 'btn btn-default'
+'
+= link_to t('.destroy', :default => t("helpers.links.destroy")), vehicule_path(@vehicule), :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-danger'
