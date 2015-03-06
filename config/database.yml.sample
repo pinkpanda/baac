@@ -1,0 +1,21 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+  username: root
+  password:
+  socket: /tmp/mysql.sock
+
+development:
+  <<: *default
+  database: baac_development
+
+test:
+  <<: *default
+  database: baac_test
+
+production:
+  <<: *default
+  database: baac_production
+  username: baac
+  password: <%= ENV['BAAC_DATABASE_PASSWORD'] %>
