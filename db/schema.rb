@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150306133933) do
+ActiveRecord::Schema.define(version: 20150396133113) do
 
   create_table "accidents", force: :cascade do |t|
     t.float    "severity",         limit: 24
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20150306133933) do
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
     t.integer  "city_id",          limit: 4
+    t.integer  "organism_id",      limit: 4
   end
 
   add_index "accidents", ["agglomeration_id"], name: "index_accidents_on_agglomeration_id", using: :btree

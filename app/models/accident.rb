@@ -9,8 +9,7 @@ class Accident < ActiveRecord::Base
   belongs_to :light
   belongs_to :membership
   belongs_to :city
+  belongs_to :organism
 
   has_many :vehicules
-
-  validates :agglomeration, :assignment, :atmoshpere, :car_category, :collision, :insurance, :intersection, :light, :membership, :city, presence: true
 end
